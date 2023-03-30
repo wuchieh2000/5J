@@ -1,0 +1,403 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+} */
+h1{
+    font-size: 30px;
+    color:#fff;
+}
+body{
+    background:linear-gradient(0deg,#ee9966,#6699ee)fixed;
+}
+
+#menu_control{
+    opacity: 0;
+    position: absolute;
+    z-index: -3;
+}
+.title-navbar {
+    width: 100%;
+    height: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+.title-navbar .navbar-top{
+    width:100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    background-color: #203864;
+    position: relative;
+    box-shadow: 0px 5px 10px #202090;
+}
+.title-navbar .logo{
+    width: 60px;
+    height: 50px;
+    margin: 0 10px;
+    
+}
+.title-navbar .logo img{
+    width: 100%;
+    height: 100%;
+}
+.title-navbar .logo:hover{
+    animation: ss .3s linear infinite alternate;
+}
+@keyframes ss{
+    0%{
+        transform: rotate(-10deg);
+    }
+    100%{
+        transform: rotate(10deg);
+    }
+}
+.title-navbar h1{
+    margin: auto 20px;
+}
+.title-navbar .title-nav{
+    /* margin-left: 30px; */
+    padding: 15px 10px;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+.title-navbar .title-nav a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+}
+.title-navbar label{
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+    border-radius: 6px;
+    background-color: #000;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: none;
+    /* opacity: 0; */
+}
+.title-navbar label::before{
+    content: "";
+    height: 2px;
+    width: 46px;
+    background-color: #ccc;
+    position: absolute;
+    top: 0;
+    left: 2px;
+    right: 2px;
+    bottom: 0;
+    margin: auto;
+    box-shadow: 0px 10px 0 #ccc,
+    0px -10px 0 #ccc;
+}
+.title-navbar label span{
+    opacity: 0;
+    z-index: -1;
+}
+.title-navbar .branch-nav{
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    top:-10px;
+    right: 0;
+    background-color: #b4c7e7;
+    /* display: none; 用none和block沒動畫 */
+    /* opacity: 1; */
+    transition: .3s .2s;
+    z-index: -2;
+}
+.title-navbar .branch-nav nav{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    /* 要有高度才能垂直置中 */
+    justify-content: space-evenly;
+}
+.title-navbar .branch-nav nav a{
+    text-decoration: none;
+    color: #fff;
+    padding: 3px 5px;
+
+}
+.navbar-top .title-nav:hover  ~ .branch-nav{
+    /* display: block;用none和block沒動畫 */
+    /* opacity: 1;  */
+    top: 70px;
+}
+.title-navbar .branch-nav:hover{
+    /* display: block;用none和block沒動畫 */ 
+    /* opacity: 1;  */
+    top: 70px;
+}
+.navbar-top .branch-nav a:hover{
+    color: #202090;
+    
+    background-color: #fff;
+}
+@media screen and (max-width:768px){
+    .title-navbar label{
+        display: block;
+    }
+    .title-navbar .title-nav{
+        display: none;
+    }
+    .title-navbar .branch-nav{
+        /* display: none; */
+        width: 60%;
+        left: -100%;
+        height: 100vh;
+        z-index: 5;
+        
+    }
+    .title-navbar .branch-nav nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        
+    }
+    .title-navbar .branch-nav nav a{
+        padding: 20px 15px;
+        /* text-align: center; */
+        width: 100%;
+        font-size: 25px;
+        border-bottom: 3px solid #fff;
+        /* background-color: #fa0; */
+    }
+    #menu_control:checked ~ .title-navbar .branch-nav{
+        /* display: block; */
+        opacity: 1;
+        left: 0%;
+    }
+}
+
+/* 以上標題選單區 */
+/* 以下圖片區文字 */
+
+.mybg .txt p{
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+    border-top:2px dotted #203864;
+    padding: 20px 0 0 0;
+    color: #eee;
+    font-size: 22px;
+    /* margin: 0 auto; */
+}
+.mybg .txt h2{
+    width: 100%;
+    font-size: 36px;
+    color: #eef;
+     margin-top: 0;
+    padding-top: 15px;
+    text-align: center;
+    
+}
+
+
+.mybg{
+    background-image: linear-gradient(0deg, #dd8866, #6688dd);
+}
+
+
+
+
+/* 光相圖片區 */
+.show-picbox{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 100;
+}
+.show-picbox img{
+    width: 90%;
+    max-height: 800px;
+    max-width: 800px;
+    object-fit: cover;
+}
+.show-picbox span{
+    color: #fff;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    cursor: pointer;
+}
+/* 圖片區 */
+.picwrap{
+    /* 這區其實可以設在container 
+    只是要每個mypic外面都要有一層picwrap
+    然後width-$和height-$都設定在picwrap而不是mypic*/
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows:200px 300px;
+    grid-auto-flow:dense;
+}
+.picwrap  .mypic{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* 讓text定位用的 */
+}
+.picwrap .mypic .myimage{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 3px 5px 10px #333;
+}
+.picwrap .myimage img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.picwrap .myimage:hover img{
+    transform: scale(1.3);
+}
+.picwrap .text{
+    opacity: 0;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    /* 無法觸發按鈕事件,避免干擾到其他按鈕事件,如圖片 */
+    z-index: 3;
+    transition: .3s ease-in-out;
+    /* -webkit-backdrop-filter: blur(5px) saturate(1.8);
+    backdrop-filter: blur(5px) saturate(1.8);
+    讓文字周圍有模糊區塊,可以模糊文字周圍的圖片背景 */
+}
+.picwrap .mypic:hover  .text{
+    opacity: 1;
+    animation: down .3s linear;
+    padding: 1em;
+    /* width: 100%; 他有設為啥我不型 */
+    background: rgba(0, 0, 0, .4);
+    box-shadow: 3px 3px 10px #fff;
+    
+}
+
+
+/* 格線專用 */
+.width-1{
+    grid-column: span 1;
+}
+.width-2{
+    grid-column: span 2;
+}
+.width-3{
+    grid-column: span 3;
+}
+.width-4{
+    grid-column: span 4;
+}
+.width-5{
+    grid-column: span 5;
+}
+.width-6{
+    grid-column: span 6;
+}
+.height-1{
+    grid-row: span 1;
+}
+.height-2{
+    grid-row: span 2;
+}
+.height-3{
+    grid-row: span 3;
+}
+.height-4{
+    grid-row: span 4;
+}
+.height-5{
+    grid-row: span 5;
+}
+.height-6{
+    grid-row: span 6;
+}
+
+/* 遊戲上面文字 */
+.myblue .txt{
+    color: #fff;
+    margin: 15px 0;
+    text-align: center;
+}
+.myblue .txt h2{
+    font-size: 40px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #fff;
+}
+.myblue .txt p{
+    font-size: 24px;
+}
+
+
+@keyframes down{
+    0%{
+        top:10%;
+    }
+    50%{
+        top:25%
+    }
+    100%{
+        top:50%
+    }
+    /* 因為我有設訂定位所以可以用top設定 */
+}
+
+
+@media screen and (max-width:650px){
+    .picwrap{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .height-1, .height-2, .height-3, .height-4, .height-5 , .height-6{
+        grid-row: span 1;
+    }
+    .width-1, .width-2, .width-3, .width-4, .width-5 , .width-6{
+        grid-column: span 1;
+    }
+    .myblue .txt h2{
+        font-size: 22px;
+    }
+    .myblue .txt p{
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width:1280px){
+    .picwrap{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .height-4, .height-5 , .height-6{
+       grid-row:span 3;
+    }
+    .width-4, .width-5 , .width-6{
+       grid-column:span 3;
+    }
+}
+@media screen and (min-width:1600px){
+    .picwrap{
+        grid-template-columns: repeat(6, 1fr);
+    }
+    
+}
+
+
+

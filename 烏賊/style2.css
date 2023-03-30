@@ -1,0 +1,441 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+} */
+
+.title-page {
+    width: 100%;
+    height: 100vh;
+
+}
+
+.title-page .wrap {
+    height: 100%;
+    position: relative;
+    background:
+        linear-gradient(115deg, #2f5597 50%, transparent 50%)center center / 100% 100%,
+        url(img/2018-07-11_00.18.04.png)no-repeat right center / 70% 100%;
+        color:#fff
+
+}
+
+.title-page .item {
+    width: 45%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5vh;
+    
+}
+
+.title-page h1 {
+    font-size: 42px;
+    margin-bottom: 4px;
+}
+
+.title-page h3 {
+    font-size: 26px;
+    margin-bottom: 4px;
+}
+
+.title-page p {
+    font-size: 16px;
+    /* 以上都是首頁封面 */
+}
+
+.pic-card{
+    
+    width: 100%;
+    /* max-height: 40vh; */
+    height: auto;
+    background-color: aliceblue;
+}
+.pic-card .wrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.pic-card .item{
+    
+    width: 25%;
+    height: 300px;
+    max-height: 300px;
+    
+    position: relative;
+    
+    
+}
+.pic-card img {
+    width: 100%;
+    height: 100%;
+    vertical-align:middle;
+    object-fit: cover;
+     
+    /* 讓圖片下面沒有一點點空格 */
+}
+.pic-card .txt{
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: center;
+   background-color: rgba(0, 0, 0, .6);
+   opacity: 0;
+   transition: .3s;
+   text-decoration: none;
+}
+.pic-card .txt h2{
+    /* padding: 0 10px; */
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 10px;
+    position: relative;
+}
+.pic-card .txt .go{
+    width: 50px;
+    position: absolute;
+    align-self:flex-end;
+    padding: 5px;
+    right: 20px;
+    bottom: 20px;
+    background-color: transparent;
+    border-radius: 20%;
+    color: #fff;
+    font-size: 20px;
+    transition: .3s;
+}
+.pic-card .go:hover{
+    color: #000;
+    background-color: #fff;
+}
+.pic-card .txt h2:after{
+    content: "";
+    margin:10px 0;
+    display: block;
+    background-color:deepskyblue;
+    width: 0%;
+    height: 2px;
+    transition: .45s .2s;
+}
+.pic-card .txt a{
+    text-decoration: none;
+    color: #fff;
+    transition: .3s;
+}
+.pic-card .txt p{
+    width: 100%;
+    margin-right: 10px;
+    
+    font-size: 16px;
+    color: #fff;
+}
+.pic-card .item:hover .txt{
+    opacity: 1;
+}
+.pic-card .item:hover h2:after{
+    width: 100%;
+}
+.txt a:hover{
+    color:#feaa66;
+}
+.mycontainer {
+    /* 文章內容固定寬 */
+    width: 100%;
+    height: 1200px;
+    display: flex;
+    justify-content: center;
+}
+
+.mycontainer .wrap {
+    width: 83%;
+    height: 100%;
+    background-color: #2f5597;
+
+}
+
+.mycontainer .item1 {
+    font-size: 50px;
+}
+.game-video{
+    max-width: 1400px;
+    height: 100%;
+    
+}
+.game-video .row{
+    padding-bottom: 50px;
+}
+.game-video h3{
+    text-align: center;
+    border-bottom: 2px dotted #fff;
+    font-size: 38px;
+    padding: 10px 0;
+    color: #eee;
+}
+.game-video > p{
+    text-align: center;
+    font-size: 20px;
+    color: #eee;
+}
+.video-box{
+    width: 100%;
+    height: 0;
+    padding-bottom: 45%;
+    position: relative;
+}
+.game-video .col-12{
+    padding: 0 20px;
+}
+.game-video .col-12 p{
+    font-size: 20px;
+    color: #fff;
+    padding: 50px 240px 0;
+    
+}
+.video-box iframe{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+/* 以上首頁 */
+
+.mycontainer-fluid{
+    
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #2f5597;
+    
+}
+.mycontainer-fluid .wrap{
+    width: 1100px;
+    /* height: 100%; */
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+}
+.mycontainer-fluid .item{
+    width: 1198px;
+    height: 100%;
+    display: flex;
+    margin: 30px 0px;
+    box-sizing: border-box;
+    border-bottom:2px solid #ccc;
+    box-shadow: 0px 10px 20px rgba(23, 23, 107, 0.6);
+    transform: translateY(0px);
+    transition: .2s;
+}
+.mycontainer-fluid .item .pic{
+    width: 30%;
+}
+.mycontainer-fluid .item .pic img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+    background-color: #fff;
+}
+.mycontainer-fluid .item .text{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-left: 25px; */
+    /* 用這個設定三角形會破圖到背景? */
+    padding-left: 25px;
+    background-color: #fff;
+    
+}
+.mycontainer-fluid .item .text h3{
+    padding: 25px 0 10px 0;
+    font-size: 25px;
+    font-weight: 900;
+    position: relative;
+}
+
+
+.mycontainer-fluid .item .text:after{
+    content: "";
+    width: 0;
+    height: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    /* 這個右其實可以不用打 */
+    /* left: 0; */
+    height: 100%;
+    border-left: 60px solid transparent;
+    border-top: 165px solid #fff;
+    border-bottom: 165px solid #fff;
+    position:absolute;
+    transform: translateX(-1282%);
+    
+}
+.mycontainer-fluid .item .text p{
+    border-top: 2px solid #8855dd;
+    padding-top: 12px;
+    padding: 5px 15px;
+    font-size: 18px;
+    font-weight: 300;
+}
+.mycontainer-fluid .item .text .btn{
+    line-height:2em;
+    padding: 0 15px;
+    border: 1px solid #888;
+    border-radius: 100px;
+    margin:auto 20px 20px 0 ;
+    align-self: flex-end;
+    text-decoration: none;
+    color: #888;
+}
+.mycontainer-fluid .item .text .btn:hover{
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    color: #fff;
+    
+}
+.mycontainer-fluid .item:hover{
+    transform: translateY(-20px);
+    
+}
+.mycontainer-fluid .item:hover .text{
+    background: linear-gradient(225deg,#ee9966  ,#8855dd 60%);
+}
+.mycontainer-fluid .item:hover .text:after{
+    
+    border-top: 165px solid #8855dd;
+    border-bottom: 165px solid #8855dd;
+    /* 邊框縣絕對不能打0.幾,到最後會有問題沒辦法剛好 */
+}
+.mycontainer-fluid .item:hover .btn{
+    border:1px solid #000;
+    color: #000;
+}
+@media screen and(max-width:768px){
+
+    .mycontainer-fluid .item .text p{
+        border-top: 2px solid #8855dd;
+        padding-top: 12px;
+        padding: 5px 10px;
+        font-size: 16px;
+        font-weight: 300;
+    }
+}
+
+/* 介紹區 */
+.introduce{
+    width: 100%;
+    height: 90vh;
+    background-color: #8faadc;
+    color: #fff;
+    font-size: 22px;
+}
+.introduce h2{
+    font-size: 50px;
+    text-align: center;
+    border-bottom: 3px solid #fff;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+.introduce p{
+    line-height: 1.7;
+    padding: 15px;
+}
+/* 頁尾區 */
+.footerbox-color{
+    background:linear-gradient(90deg,#ee6699,#9966ee);
+    height: 100%;
+    padding-bottom: 35px;
+}
+.footerbox{
+    height: 40vh;
+    max-height: 300px;
+    
+}
+.footerbox a{
+    text-decoration: none;
+    color: #fff;
+}
+.footerbox .col{
+    margin: 0 20px;
+    width: 0;
+    flex-grow: 1;
+}
+.footerbox h4{
+    border-bottom:2px solid #2f5597;
+    color: #fff;
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+.footerbox nav a{
+    margin: 10px 0;
+    font-size: 16px;
+}
+.footerbox nav a:hover{
+    color: #1166ee;
+}
+.footerbox form{
+    width: 100%;
+    margin: auto 0;
+   /* display: flex;有打bt5縮寫了,用途是讓input的輸入框和按鈕並排緊貼 */
+}
+.footerbox form input{
+    display: flex; 
+    padding: 5px;
+    border: none; 
+}
+.footerbox form input[type="text"]{
+    
+    width: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+.footerbox form input[type="submit"]{
+    
+    background-color: #ee9966;
+    color: #fff;
+    margin: 0;
+    /* flex-grow: 1;設定的話按鈕會跑掉 */
+}
+.footer-copy{
+   text-align: center;
+   margin: 100px 0 0 0;
+   padding: 20px 0;
+   background-color: #000;
+   color: #fff;
+}
+
+
+@media screen and (max-width:768px){
+    .pic-card .wrap{
+        flex-wrap: wrap;
+    }
+    .pic-card .item{
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .pic-card .txt p{
+        font-size: 13px;
+    }
+    .pic-card .txt h2{
+        font-size: 16px;
+    }
+    .footerbox{
+        display: none;
+    }
+    .footer-copy{
+        margin-top: 0;
+        
+    }
+}
